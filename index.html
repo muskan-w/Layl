@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Layl - Tahajjud Time Calculator</title>
+
+        <!--link to stylesheet-->
+        <link rel="stylesheet" href="styles.css">
+
+        <!--link font family-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!--hero / intro-->
+        <section class="hero" id="hero">
+            <div class="moon" aria-hidden="true"></div>
+            <p class="hero-title">Layl</p>
+            <p class="hero-subtitle">Perhaps what you cannot find now, you can find in the last third of the night.</p>
+        </section>
+
+        <!--calculator card-->
+        <main class="calc-card">
+            <h1>Tahajjud Time</h1>
+            <p class="subtitle">Find the last third of the night</p>
+
+            <div class="field">
+                <label for="maghribTime">Maghrib time (today)</label>
+                <input type="time" id="maghribTime">
+            </div>
+
+            <div class="field">
+                <label for="fajrTime">Fajr time (tomorrow)</label>
+                <input type="time" id="fajrTime">
+            </div>
+
+            <button id="calcBtn">Calculate</button>
+
+            <div id="result" class="result hidden">
+                <p class="result-label">Last third of the night begins at approximately</p>
+                <h2 id="lastThirdStart">--:--</h2>
+                <p class="result-label">until Fajr at <span id="fajrEcho">--:--</span></p>
+            </div>
+        </main>
+
+        <!--verses-->
+        <section class="verses" id="verses">
+            <p class="verse" data-delay="0">
+                "And rise at the last part of the night, offering additional prayers, so your Lord may raise you to a station of praise."
+                <span class="verse-source">— Quran 17:79</span>
+            </p>
+            <p class="verse" data-delay="600">
+                "...So recite in prayer whatever you can from the Quran...""
+                <span class="verse-source">- Snippet of verse, Quran 73:20</span>
+            </p>
+            <p class="verse" data-delay="1200">
+                "...Our Lord the Blessed, the Superior, comes every night down on the nearest Heaven to us when the last third of the night remains, saying: "Is there anyone to invoke Me, so that I may respond to invocation?...'
+                <span class="verse-source">— Snippet of Hadith, Sahih al-Bukhari 1145</span>
+            </p>
+        </section>
+
+        <!--link script.js-->
+        <script src="script.js" defer></script>
+    </body>
+</html>

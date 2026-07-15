@@ -1,0 +1,215 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #1c1230 0%, #2a1a3d 60%, #3a1f3f 100%);
+  font-family: 'Inter', sans-serif;
+  color: #fbf3ec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.25rem;
+}
+
+h1, h2 {
+  font-family: 'Fraunces', serif;
+  margin: 0;
+}
+
+/* --- verses --- */
+
+.verses {
+  text-align: center;
+  max-width: 640px;
+  margin-top: 3rem;
+}
+
+.verse {
+  font-family: 'Fraunces', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #f2e6f0;
+  margin: 0 0 1.5rem;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.verse-source {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #c8a8c8;
+  margin-top: 6px;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* --- calculator card --- */
+
+.calc-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
+.subtitle {
+  color: #c8a8c8;
+  margin: 0.25rem 0 2rem;
+  font-size: 0.95rem;
+}
+
+.field {
+  text-align: left;
+  margin-bottom: 1.25rem;
+}
+
+.field label {
+  display: block;
+  font-size: 0.85rem;
+  color: #d8c4d8;
+  margin-bottom: 0.4rem;
+}
+
+.field input[type="time"] {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #fbf3ec;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 122, 69, 0.3);
+  border-radius: 10px;
+}
+
+.field input[type="time"]:focus {
+  outline: none;
+  border-color: #ff7a45;
+  box-shadow: 0 0 0 3px rgba(255, 93, 143, 0.25);
+}
+
+/* time picker icon is white by default in most browsers — invert so it's visible on dark bg */
+.field input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+button {
+  width: 100%;
+  padding: 0.85rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: #fff;
+  background: linear-gradient(90deg, #ff7a45, #ff5d8f);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: filter 0.15s ease;
+}
+
+button:hover {
+  filter: brightness(1.08);
+}
+
+.result {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hidden {
+  display: none;
+}
+
+.result-label {
+  color: #c8a8c8;
+  font-size: 0.9rem;
+  margin: 0 0 0.25rem;
+}
+
+.result h2 {
+  font-size: 2.5rem;
+  color: #1b1025;
+  background: none;
+  -webkit-text-fill-color: #1b1025;
+  margin: 0.25rem 0;
+}
+
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 5rem 1.25rem 4rem;
+  overflow: hidden;
+}
+
+.moon {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle at 35% 30%, #fff5e8 0%, #b86d3e 25%, #ff9d7a 55%, #d15a8f 80%, #41274b 100%);
+  animation: glow 4s ease-in-out infinite, hueShift 10s linear infinite;
+}
+
+.moon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #d1d370, #ff5d8f, #a86bd6, #ff7a45);
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+  animation: hueShift 6s linear infinite reverse;
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 40px 10px rgba(255, 122, 69, 0.35); }
+  50%      { box-shadow: 0 0 70px 25px rgba(172, 102, 179, 0.781); }
+}
+
+@keyframes hueShift {
+  from { filter: hue-rotate(0deg); }
+  to   { filter: hue-rotate(360deg); }
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-subtitle {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #d8c4d8;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.verse {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: verseIn 0.9s ease forwards;
+}
+
+@keyframes verseIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
