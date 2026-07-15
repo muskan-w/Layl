@@ -9,7 +9,7 @@ document.getElementById('calcBtn').addEventListener('click', () => {
     return;
   }
 
-  // take time and date for now, parse into DAT object
+  // take time and date for now, parse into DAT object.
   const today = new Date();
   const maghribDate = new Date(today.toDateString() + ' ' + maghribVal);
 
